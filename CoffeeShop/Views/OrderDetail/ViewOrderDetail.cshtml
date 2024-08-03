@@ -1,0 +1,45 @@
+﻿@model List<CoffeeShop.Models.OrderDetailModel>;
+<div class="card">
+    <div class="card-body">
+        
+        <div class="d-flex justify-content-between align-items-center">
+            <h5 class="card-title">OrderDetail</h5>
+            <button class="btn btn-primary">
+                <a class="text-white" asp-controller="OrderDetail" asp-action="AddOrderDetail">
+                    <i class="bi bi-plus"></i><span>Add OrderDetail</span>
+                </a>
+            </button>
+        </div>
+
+        <!-- Table with stripped rows -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">OrderDetailID</th>
+                    <th scope="col">OrderID</th>
+                    <th scope="col">ProductID</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">TotalAmount</th>
+                    <th scope="col">UserID</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var od in Model)
+                {
+                    <tr>
+                        <th scope="row">@od.OrderDetailID</th>
+                        <td>@od.OrderID</td>
+                        <td>@od.ProductID</td>
+                        <td>@od.Quantity</td>
+                        <td>@od.Amount</td>
+                        <td>@od.TotalAmount</td>
+                        <td>@od.UserID</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <!-- End Table with stripped rows -->
+
+    </div>
+</div>

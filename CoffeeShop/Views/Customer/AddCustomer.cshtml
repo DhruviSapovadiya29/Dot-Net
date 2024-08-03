@@ -1,0 +1,71 @@
+﻿@model CoffeeShop.Models.CustomerModel;
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Customer</h5>
+
+        <!-- Multi Columns Form -->
+        <form class="row g-3" method="post" asp-controller="Customer" asp-action="SaveCustomer">
+            <div class="col-md-12">
+                <label asp-for="CustomerName" for="inputName5" class="form-label">Customer Name</label>
+                <input asp-for="CustomerName" type="text" class="form-control" id="inputName5">
+            </div>
+            <div class="col-md-12">
+                <label asp-for="HomeAddress" for="inputAddress5" class="form-label">Home Address</label>
+                <input asp-for="HomeAddress" type="text" class="form-control" id="inputAddres5s" placeholder="1234 Main St">
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Email" for="inputEmail5" class="form-label">Email</label>
+                <input asp-for="Email" type="email" class="form-control" id="inputEmail5">
+            </div>
+            <div class="col-md-6">
+                <label asp-for="MobileNo" for="inputName5" class="form-label">Mobile No.</label>
+                <input asp-for="MobileNo" type="text" class="form-control" id="inputName5">
+            </div>
+            <div class="col-md-6">
+                <label asp-for="GSTNo" for="inputName5" class="form-label">GST No.</label>
+                <input asp-for="GSTNo" type="text" class="form-control" id="inputName5">
+            </div>
+            <div class="col-md-6">
+                <label asp-for="CityName" for="inputName5" class="form-label">City Name</label>
+                <input asp-for="CityName" type="text" class="form-control" id="inputName5">
+            </div>
+            <div class="col-md-6">
+                <label asp-for="PinCode" for="inputName5" class="form-label">Pin Code</label>
+                <input asp-for="PinCode" type="text" class="form-control" id="inputName5">
+            </div>
+            <div class="col-md-6">
+                <label asp-for="NetAmount" for="inputPassword5" class="form-label">Net Amount</label>
+                <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input asp-for="NetAmount" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <span class="input-group-text">.00</span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="UserID" for="inputState" class="form-label">UserId</label>
+                <select asp-for="UserID" id="inputState" class="form-select">
+                    <option selected>Choose...</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Check me out
+                    </label>
+                </div>
+            </div>
+            <div class="text-center">
+                <input type="hidden" asp-for="CustomerID"/>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+        </form><!-- End Multi Columns Form -->
+
+    </div>
+</div>

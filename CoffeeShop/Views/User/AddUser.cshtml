@@ -1,0 +1,61 @@
+﻿@model CoffeeShop.Models.UserModel;
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">User</h5>
+
+        <!-- Multi Columns Form -->
+        <form class="row g-3" method="post" asp-controller="User" asp-action="SaveUser">
+            <div class="col-md-12">
+                <label asp-for="UserName" for="inputName5" class="form-label">User Name</label>
+                <input asp-for="UserName" type="text" class="form-control" id="inputName5">
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Email" for="inputEmail5" class="form-label">Email</label>
+                <input asp-for="Email" type="email" class="form-control" id="inputEmail5">
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Password" for="inputPassword5" class="form-label">Password</label>
+                <input asp-for="Password" type="password" class="form-control" id="inputPassword5">
+            </div>
+            <div class="col-md-12">
+                <label asp-for="Address" for="inputAddress5" class="form-label">Address</label>
+                <input asp-for="Address" type="text" class="form-control" id="inputAddres5s" placeholder="1234 Main St">
+            </div>
+            <div class="col-md-12 mb-3">
+                <label asp-for="MobileNo" for="inputName5" class="form-label">Mobile No.</label>
+                <input asp-for="MobileNo" type="text" class="form-control" id="inputName5">
+            </div>
+            <fieldset class="col-md-12 row">
+                <legend class="col-form-label col-sm-2 pt-0">IsActive</legend>
+                <div class="col-md-10 d-flex align-items-center">
+                    <div class="form-check me-3">
+                        <input asp-for="IsActive" class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="True" checked>
+                        <label asp-for="IsActive" class="form-check-label" for="gridRadios1">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input asp-for="IsActive" class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="False">
+                        <label asp-for="IsActive" class="form-check-label" for="gridRadios2">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Check me out
+                    </label>
+                </div>
+            </div>
+            <div class="text-center">
+                <input type="hidden" asp-for="UserID"/>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+        </form><!-- End Multi Columns Form -->
+
+    </div>
+</div>

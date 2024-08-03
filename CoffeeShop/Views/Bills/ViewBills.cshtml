@@ -1,0 +1,47 @@
+﻿@model List<CoffeeShop.Models.BillsModel>;
+<div class="card">
+    <div class="card-body">
+        
+        <div class="d-flex justify-content-between align-items-center">
+            <h5 class="card-title">Bill Detail</h5>
+            <button class="btn btn-primary">
+                <a class="text-white" asp-controller="Bills" asp-action="AddBills">
+                    <i class="bi bi-plus"></i><span>Add Bills</span>
+                </a>
+            </button>
+        </div>
+
+        <!-- Table with stripped rows -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">BillID</th>
+                    <th scope="col">BillNumber</th>
+                    <th scope="col">BillDate</th>
+                    <th scope="col">OrderID</th>
+                    <th scope="col">TotalAmount</th>
+                    <th scope="col">Discount</th>
+                    <th scope="col">NetAmount</th>
+                    <th scope="col">UserID</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var b in Model)
+                {
+                    <tr>
+                        <th scope="row">@b.BillID</th>
+                        <td>@b.BillNumber</td>
+                        <td>@b.BillDate.ToString("yyyy-MM-dd")</td>
+                        <td>@b.OrderID</td>
+                        <td>@b.TotalAmount</td>
+                        <td>@b.Discount</td>
+                        <td>@b.NetAmount</td>
+                        <td>@b.UserID</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <!-- End Table with stripped rows -->
+
+    </div>
+</div>

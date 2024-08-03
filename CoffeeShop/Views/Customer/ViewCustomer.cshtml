@@ -1,0 +1,51 @@
+﻿@model List<CoffeeShop.Models.CustomerModel>;
+<div class="card">
+    <div class="card-body">
+        
+        <div class="d-flex justify-content-between align-items-center">
+            <h5 class="card-title">Customer Detail</h5>
+            <button class="btn btn-primary">
+                <a class="text-white" asp-controller="Customer" asp-action="AddCustomer">
+                    <i class="bi bi-plus"></i><span>Add Customer</span>
+                </a>
+            </button>
+        </div>
+
+        <!-- Table with stripped rows -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">CustomerID</th>
+                    <th scope="col">CustomerName</th>
+                    <th scope="col">HomeAddress</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">MobileNo</th>
+                    <th scope="col">GST NO</th>
+                    <th scope="col">CityName</th>
+                    <th scope="col">PinCode</th>
+                    <th scope="col">NetAmount</th>
+                    <th scope="col">UserID</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var c in Model)
+                {
+                    <tr>
+                        <th scope="row">@c.CustomerID</th>
+                        <td>@c.CustomerName</td>
+                        <td>@c.HomeAddress</td>
+                        <td>@c.Email</td>
+                        <td>@c.MobileNo</td>
+                        <td>@c.GSTNo</td>
+                        <td>@c.CityName</td>
+                        <td>@c.PinCode</td>
+                        <td>@c.NetAmount</td>
+                        <td>@c.UserID</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <!-- End Table with stripped rows -->
+
+    </div>
+</div>

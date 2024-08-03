@@ -1,0 +1,45 @@
+﻿@model List<CoffeeShop.Models.UserModel>;
+<div class="card">
+    <div class="card-body">
+        
+        <div class="d-flex justify-content-between align-items-center">
+            <h5 class="card-title">User Detail</h5>
+            <button class="btn btn-primary">
+                <a class="text-white" asp-controller="User" asp-action="AddUser">
+                    <i class="bi bi-plus"></i><span>Add User</span>
+                </a>
+            </button>
+        </div>
+
+        <!-- Table with stripped rows -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">UserID</th>
+                    <th scope="col">UserName</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">MobileNo</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">IsActive</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var u in Model)
+                {
+                    <tr>
+                        <th scope="row">@u.UserID</th>
+                        <td>@u.UserName</td>
+                        <td>@u.Email</td>
+                        <td>@u.Password</td>
+                        <td>@u.MobileNo</td>
+                        <td>@u.Address</td>
+                        <td>@u.IsActive</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <!-- End Table with stripped rows -->
+
+    </div>
+</div>
